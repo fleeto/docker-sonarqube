@@ -13,11 +13,11 @@ ENV SONAR_VERSION=5.6.1 \
 
 COPY run.sh /usr/local/bin/
 COPY prepare.sh /usr/local/bin
+WORKDIR $SONARQUBE_HOME
 RUN /usr/local/bin/prepare.sh
 
 # Http port
 EXPOSE 9000
 
 VOLUME ["$SONARQUBE_HOME/data", "$SONARQUBE_HOME/extensions"]
-WORKDIR $SONARQUBE_HOME
 CMD ["run.sh"]
