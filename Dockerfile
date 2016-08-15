@@ -1,6 +1,6 @@
 FROM java:8-alpine
 ENV SONAR_VERSION=5.6.1 \
-    SONARQUBE_HOME=/opt/sonarqube \
+    SONARQUBE_HOME=/usr/share/sonarqube \
     # Database configuration
     # Defaults to using H2
     SONARQUBE_JDBC_USERNAME=sonar \
@@ -13,7 +13,6 @@ ENV SONAR_VERSION=5.6.1 \
 
 COPY run.sh /usr/local/bin/
 COPY prepare.sh /usr/local/bin
-WORKDIR $SONARQUBE_HOME
 RUN /usr/local/bin/prepare.sh
 
 # Http port
