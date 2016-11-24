@@ -1,5 +1,5 @@
 FROM java:8-alpine
-ENV SONAR_VERSION=5.6.1 \
+ENV SONAR_VERSION=5.6.3 \
     SONARQUBE_HOME=/usr/share/sonarqube \
     # Database configuration
     # Defaults to using H2
