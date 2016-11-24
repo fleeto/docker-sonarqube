@@ -1,4 +1,5 @@
 #!/bin/sh
+set -xe
 apk add --no-cache gnupg unzip curl
 gpg --keyserver ha.pool.sks-keyservers.net --recv-keys F1182E81C792928921DBCAB4CFCA4A29D26468DE
 mkdir -p /usr/share
