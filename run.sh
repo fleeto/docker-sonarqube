@@ -8,20 +8,6 @@ fi
 
 CONF="$SONARQUBE_HOME/conf/sonar.properties"
 
-echo "" >> $CONF
-if [ -n "$SONARQUBE_HTTP_PROXY_HOST" ]; then
-  echo "http.proxyHost=$SONARQUBE_HTTP_PROXY_HOST" >> $CONF
-fi
-if [ -n "$SONARQUBE_HTTP_PROXY_PORT" ]; then
-  echo "http.proxyPort=$SONARQUBE_HTTP_PROXY_PORT" >> $CONF
-fi
-if [ -n "$SONARQUBE_HTTPS_PROXY_HOST" ]; then
-  echo "https.proxyHost=$SONARQUBE_HTTPS_PROXY_HOST" >> $CONF
-fi
-if [ -n "$SONARQUBE_HTTPS_PROXY_PORT" ]; then
-  echo "https.proxyPort=$SONARQUBE_HTTPS_PROXY_PORT" >> $CONF
-fi
-
 exec java -jar $SONARQUBE_HOME/lib/sonar-application-$SONAR_VERSION.jar \
   -Dsonar.log.console=true \
   -Dsonar.jdbc.username="$SONARQUBE_JDBC_USERNAME" \
